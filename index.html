@@ -26,6 +26,12 @@
             align-items: center;
             justify-content: flex-end;
         }
+        .flex-col-evenly {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
         .flex-row-center {
             display: flex;
             flex-direction: row;
@@ -46,7 +52,7 @@
             padding-top: 100px;
         }
         .wrap {
-            width: 30em;
+            width: 70%;
             height: 20em;
             background-image: url("nu_clean.gif");
             background-size: cover;
@@ -72,9 +78,9 @@
             text-decoration:none;
             color:#000;
             font-weight: bold;
-            height:10em;
-            width:10em;
-            padding:1em;
+            height:20%;
+            width:20%;
+            padding: 20px;
             box-shadow: 5px 5px 7px rgba(33,33,33,.7);
             transition: transform .15s linear;
             margin: 10px;
@@ -110,12 +116,12 @@
             transform: skew(-10deg);
         }
         .wrap-modal {
-            width: 100vw;
+            width: 100%;
             height: 100vh;
             background-color: rgba(0,0,0,0.9);
         }
         .modal {
-            width: 30em;
+            width: 70%;
             height: 20em;
             background-color: rgba(252, 252, 231, 0.856);
             border-radius: 10px;
@@ -124,13 +130,35 @@
             font-size: 36px;
             cursor: pointer;
         }
+        .modal > input {
+            width: 80%;
+            height: 3em;
+            border-radius: 5px;
+            border: none;
+
+            font-size: 13px;
+            margin: 5px;
+        }
+        .modal > input:focus-visible {
+            outline: none;
+        }
+        .modal-btn {
+            width: 50%;
+            height: 3em;
+            font-weight: bold;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <h1 class="title">환🤪 최지웅 팀스파르타 입성 😍영</h1>
     <div class="wrap flex-col-end">
         <div class="flex-row-evenly">
-            <span class="material-symbols-outlined g-icon">keyboard_double_arrow_down</span>
+            <span class="material-symbols-outlined g-icon">book</span>
             <div class="flex-col-center">
                 <h2>지웅님 환영해요!</h2>
                 <p>-팀스파르타 온라인팀-</p>
@@ -153,13 +181,13 @@
         </div>
     </div>
     <div class="wrap-modal flex-col-center">
-        <div class="modal"></div>
+        <div class="modal flex-col-evenly">
+            <input id="modal-comment" placeholder=" 환영의 인사를 남겨주세요">
+            <input id="modal-who" placeholder=" 이곳은 비워두면 익명이 됩니다">
+            <button class="modal-btn">환영 인사 남기기</button>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(()=>{
-            // alert("hey!")
-        })
-    </script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>
