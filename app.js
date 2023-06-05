@@ -65,3 +65,18 @@ $(document).ready(async()=>{
     $(".wrap-post").append(tempHtml);
     });
 })
+
+$("#welcome-btn").click(()=>{
+    if(confirm("지웅님의 환영 인삿말을 남겨주실래요?")){
+        $(".wrap-modal").css("display", "flex");
+    }
+})
+$("#member-card-btn").click(()=>{
+    if(confirm("지웅님의 멤버카드 보러 가실래요?")){
+        window.open("https://www.notion.so/teamsparta/2ef0ddd523b446af866c0e5658bda817?pvs=4");
+    }
+})
+$(".close-btn").click(()=>{
+    console.log("yaho")
+    $(".wrap-modal").hide();
+})
