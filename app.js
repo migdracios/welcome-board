@@ -45,3 +45,23 @@ $(".modal-btn").click(async()=>{
         console.error("Error adding document: ", e);
       }
 })
+
+$(document).ready(async()=>{
+    $(".wrap-post").empty();
+    const querySnapshot = await getDocs(collection(db, "welcome"));
+    querySnapshot.forEach((doc) => {
+    // console.log(`${doc.id} => ${doc.data()}`);
+    let data = doc.data();
+    console.log(data);
+
+    let comment = data.comment;
+    let who = data.who;
+    let randomNum = Math.floor(Math.random() * 4) + 1;
+    let tempHtml = `<div class="post-it flex-col-center it-${randomNum}">
+                        <div class="comment">${comment}</div>
+                        <br>
+                        <div class="who">- ${who} -</div>
+                   </div>`
+    $(".wrap-post").append(tempHtml);
+    });
+})
