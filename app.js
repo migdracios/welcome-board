@@ -114,7 +114,7 @@ const openTmi = (id) => {
     console.log(tmiDict)
     $("#tmi-modal").css("display", "flex");
     window.scrollTo({top:0, behavior:'smooth'});
-    let randomNum = Math.floor(Math.random() * 3) + 1;
+    let randomNum = Math.floor(Math.random() * 4) + 1;
     $(".modal-image").css("background-image", `url("image/${randomNum}.jpeg")`)
     $(".modal-title").text(tmiDict.main)
     $(".info1").text(tmiDict.info1)
