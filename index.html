@@ -8,6 +8,7 @@
     <title>지웅님, 환영합니다!</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Moirai+One&display=swap');
         * {
             font-family: 'Nanum Gothic Coding', monospace;
         }
@@ -132,7 +133,7 @@
             width: 80%;
             max-width: 300px;
             height: 300px;
-            background-color: rgba(252, 252, 231, 0.856);
+            background-color: rgb(195, 195, 195);
             border-radius: 10px;
         }
         .g-icon {
@@ -173,6 +174,67 @@
             margin: 10px;
             cursor: pointer;
         }
+        .tmi-container {
+            width: 70%;
+            background-color: white;
+            box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+            margin: auto;
+            padding: 16px;
+            box-sizing: border-box;
+            
+        }
+        .tmi-title {
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+        .tmi-wrap {
+            flex-wrap: wrap;
+            width: 40%;
+            max-width: 250px;
+            margin: auto;
+        }
+        .tmi {
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            border-radius: 50%;
+            background-color: rgb(253, 76, 76);
+            border: none;
+            color: white;
+            font-weight: bold;
+            box-shadow: 5px 5px 5px rgba(33,33,33,.6);
+            cursor: pointer;
+        }
+        .modal-2 {
+            width: 90%;
+            max-width: 350px;
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .modal-image {
+            width: 90%;
+            height: 200px;
+            background-image: url("nu_clean.gif");
+            background-position: center;
+            background-size: cover;
+        }
+        .modal-title {
+            width: 90%;
+            background-color: black;
+            color: white;
+            word-break: keep-all;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 10px;
+        }
+        .modal-moreinfo {
+            width: 90%;
+            word-break: keep-all;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -209,16 +271,41 @@
             <div class="who">- 익명 -</div>
         </div>
     </div>
-    <div class="wrap-modal flex-col-center">
-        <div class="modal flex-col-evenly">
-            <input id="modal-comment" placeholder=" 환영의 인사를 남겨주세요">
-            <input id="modal-who" placeholder=" 이곳은 비워두면 익명이 됩니다">
-            <div class="flex-row-center">
-                <button class="modal-btn">환영 인사 남기기</button>
-                <button class="close-btn">닫기</button>
+    <div class="tmi-container">
+        <h2 class="tmi-title"">지웅 님의 TMI 살펴보기</h4>
+            <div class="tmi-wrap flex-row-evenly">
+                <div id="tmi-1" class="tmi flex-col-center">1</div>
+                <div id="tmi-1" class="tmi flex-col-center">2</div>
+                <div id="tmi-1" class="tmi flex-col-center">3</div>
+                <div id="tmi-1" class="tmi flex-col-center">4</div>
+                <div id="tmi-1" class="tmi flex-col-center">1</div>
+                <div id="tmi-1" class="tmi flex-col-center">2</div>
+                <div id="tmi-1" class="tmi flex-col-center">3</div>
+                <div id="tmi-1" class="tmi flex-col-center">4</div>
             </div>
         </div>
+        <div id="hi-modal" class="wrap-modal flex-col-center">
+            <div class="modal flex-col-evenly">
+                <input id="modal-comment" placeholder=" 환영의 인사를 남겨주세요">
+                <input id="modal-who" placeholder=" 이곳은 비워두면 익명이 됩니다">
+                <div class="flex-row-center">
+                    <button class="modal-btn">환영 인사 남기기</button>
+                    <button class="close-btn">닫기</button>
+                </div>
+            </div>
+        </div>
+        <div id="tmi-modal" class="wrap-modal flex-col-center">
+        <div class="modal modal-2 bg-white flex-col-evenly">
+            <div class="modal-image"></div>
+            <div class="modal-title">지웅님의 롤 아이디는 "아이스크림박사" 입니다!</div>
+            <div class="modal-moreinfo info1">하지만, 롤은 거의 안하십니다</div>
+            <div class="modal-moreinfo info2">아이스크림이라, 경원 님과 접점이 가득하네요!</div>
+            <button id="tmi-close" class="close-btn">닫기</button>
+        </div>
     </div>
+    <audio id="theme-song" loop>
+        <source src="tasogare.mp3" type="audio/mpeg">
+    </audio>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="module" src="app.js"></script>
 </body>
