@@ -82,7 +82,7 @@ $(".close-btn").click(()=>{
     $(".wrap-modal").hide();
 })
 
-$(document).ready(()=>{
+$("#song-play").click(function(){
     let audio = document.querySelector('#theme-song')
     audio.play()
 })
